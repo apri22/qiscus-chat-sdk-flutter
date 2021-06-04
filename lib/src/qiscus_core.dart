@@ -106,7 +106,7 @@ class QiscusSDK {
   Future<bool> get _authenticated => __<Storage>().authenticated$;
   IRoomRepository get _room$$ => __<IRoomRepository>();
 
-  void addHttpInterceptors(RequestOptions Function(RequestOptions) onRequest) {
+  void addHttpInterceptors(RequestOptions Function(RequestOptions, RequestInterceptorHandler) onRequest) {
     __<Dio>().interceptors.add(InterceptorsWrapper(
           onRequest: onRequest,
         ));
