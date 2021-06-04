@@ -10,7 +10,7 @@ Dio getDio(Storage storage, Logger logger) {
         request.headers['qiscus-sdk-token'] = storage.token;
         request.headers['qiscus-sdk-user-id'] = storage.userId;
       }
-      return request;
+      return handler.next(request);
     },
   );
   var dio = Dio(BaseOptions())
